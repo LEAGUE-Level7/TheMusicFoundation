@@ -24,11 +24,12 @@ public class Teacher {
 		return password;
 	}
 
-	public Teacher(Long id, String userName, String password) {
+	public Teacher(String userName, String password) {
 		super();
-		this.id = id;
 		this.userName = userName;
 		this.password = password;
 	}
-
+	Teacher(){
+		
+	}
 }

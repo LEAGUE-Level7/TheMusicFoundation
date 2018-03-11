@@ -1,22 +1,27 @@
 package org.leagueofcole.musicFoundationProject;
 
-import java.sql.Date;
+import java.util.Date;
 import java.sql.Time;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 
 @Entity
 public class Lesson {
 	@Id
 	@GeneratedValue
 	private Long id;
+	@OneToOne
 	private Teacher teacher;
 	private Date date;
 	private Time startTime;
 	private Time endTime;
-	private Room room;
+	
+	//private Room room;
 	private int numStudents;
 
 	public Long getId() {
@@ -39,22 +44,24 @@ public class Lesson {
 		return endTime;
 	}
 
-	public Room getRoom() {
-		return room;
-	}
+//	public Room getRoom() {
+	//	return room;
+	//}
 
 	public int getNumStudents() {
 		return numStudents;
 	}
 
-	public Lesson(Long id, Teacher teacher, Date date, Time startTime, Time endTime, Room room, int numStudents) {
+	public Lesson(Teacher teacher, Date date, Time startTime, Time endTime,  int numStudents) {
 		super();
-		this.id = id;
 		this.teacher = teacher;
 		this.date = date;
 		this.startTime = startTime;
 		this.endTime = endTime;
-		this.room = room;
+	//	this.room = room;
 		this.numStudents = numStudents;
+	}
+	Lesson(){
+		
 	}
 }

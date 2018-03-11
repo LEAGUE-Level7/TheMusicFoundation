@@ -24,10 +24,12 @@ public class Room {
 		return type;
 	}
 
-	public Room(Long id, String name, String type) {
+	public Room(String name, String type) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.type = type;
+	}
+	Room(){
+		
 	}
 }
