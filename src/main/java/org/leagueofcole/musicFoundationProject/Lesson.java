@@ -7,7 +7,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 @Entity
@@ -21,7 +20,8 @@ public class Lesson {
 	private Time startTime;
 	private Time endTime;
 	
-	//private Room room;
+	@ManyToOne
+	private Room room;
 	private int numStudents;
 
 	public Long getId() {
@@ -44,21 +44,21 @@ public class Lesson {
 		return endTime;
 	}
 
-//	public Room getRoom() {
-	//	return room;
-	//}
+	public Room getRoom() {
+		return room;
+	}
 
 	public int getNumStudents() {
 		return numStudents;
 	}
 
-	public Lesson(Teacher teacher, Date date, Time startTime, Time endTime,  int numStudents) {
+	public Lesson(Teacher teacher, Date date, Time startTime, Time endTime, Room room, int numStudents) {
 		super();
 		this.teacher = teacher;
 		this.date = date;
 		this.startTime = startTime;
 		this.endTime = endTime;
-	//	this.room = room;
+		this.room = room;
 		this.numStudents = numStudents;
 	}
 	Lesson(){
