@@ -1,0 +1,31 @@
+h1 {
+  text-align: center;
+  color: black;
+  font-size: 50px; 
+  font-family: Futura,Verdana;
+}
+
+h2{
+  color: grey;
+  text-align: center;
+  font-size: 25px;
+}
+
+p2{
+  text-align:center;
+}
+params{
+  text-align:center;
+  margin-left: 500px;
+}
+a:link, a:active, a:visited{
+  text-align:right;
+  font-size: 25px;
+  text-decoration:none;
+  color: blue;
+  position:relative;
+  
+}
+a:hover{
+  text-decoration:underline;
+}
