@@ -1,18 +1,23 @@
 package org.leagueofcole.musicFoundationProject;
 
-import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class DefaultController {
 
 	@Autowired
 	LessonService lessonService;
+	
+	@Autowired
+	RoomService roomService;
+	
+	@Autowired
+	TeacherService teacherService;
 	
 	@GetMapping(path = "/lessons")
 	public String calendar() {
@@ -26,18 +31,19 @@ public class DefaultController {
 	public String homepage() {
 		return "homepage";
 	}
-	@GetMapping(path = "/lessons/view")
-	public String view() {
+	@GetMapping(path = "/lessons/view/{id}")
+	public String view(@RequestParam Long id, Model model) {
+		model.addAttribute("lesson", lessonService.findById(id));
 		return "view";
 	}
 	@GetMapping(path = "/lessons/new")
 	public String _new() {
 		return "new";
 	}
-	@PostMapping(path = "/lessons/new")
-	public String __new() {
-		//System.out.println(newLesson);
-		//lessonService.createLesson(new Teacher("u1", "pwd"), newLesson);
-		return "/lessons/view";
+	@GetMapping(path = "/lessons/create")
+	public String __new(@ModelAttribute NewLessonRequest newLesson, Model model) {
+		Lesson l = lessonService.createLesson(teacherService.findByUserName("wow"), roomService.findByName("A"), newLesson);
+		model.addAttribute("lesson", l);
+		return "view";
 	}
 }

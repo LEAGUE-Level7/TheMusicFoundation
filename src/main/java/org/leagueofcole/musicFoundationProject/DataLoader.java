@@ -1,8 +1,5 @@
 package org.leagueofcole.musicFoundationProject;
 
-import java.sql.Time;
-import java.util.Date;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
