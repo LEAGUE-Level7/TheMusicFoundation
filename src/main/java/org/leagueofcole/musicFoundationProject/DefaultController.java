@@ -40,8 +40,14 @@ public class DefaultController {
 	}
 	@GetMapping(path = "/lessons/view/{id}")
 	public String view(@PathVariable Long id, Model model) {
+		for (Lesson l : lessonService.all()) {
+			System.out.printf("Id: %d%n", l.getId());
+		}
+		//System.out.printf("This: %d%n", lessonService.findById(id) != null ? lessonService.findById(id).getId() : -1);
 		model.addAttribute("lesson", lessonService.findById(id));
 		return "view";
+		
+		//return "calendar";
 	}
 	@GetMapping(path = "/lessons/new")
 	public String _new() {
