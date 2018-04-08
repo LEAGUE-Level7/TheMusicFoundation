@@ -1,8 +1,5 @@
 package org.leagueofcole.musicFoundationProject;
 
-import java.sql.Time;
-import java.util.Date;
-
 import javax.annotation.PostConstruct;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +25,6 @@ public class DataLoader {
 		roomRepo.save(a);
 		Teacher t = new Teacher("wow", "pwd");
 		teacherRepo.save(t);
-		lessonRepo.save(new Lesson(t, new Date(), new Time(new Date().getTime()), new Time(new Date().getTime() + (1000 * 60 * 30)), a, 1));
+		//lessonRepo.save(new Lesson(t, new Date(), new Time(new Date().getTime()), new Time(new Date().getTime() + (1000 * 60 * 30)), a, 1));
 	}
 }
