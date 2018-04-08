@@ -1,4 +1,4 @@
-package org.leagueofcole.musicFoundationProject;
+package org.leagueofcole.musicFoundationProject.teacher;
 
 import org.springframework.data.repository.CrudRepository;
 
