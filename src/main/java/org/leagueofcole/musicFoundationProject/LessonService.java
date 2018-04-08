@@ -11,7 +11,7 @@ public class LessonService {
 	LessonRepository lessonRepo;
 	
 	public Lesson findById(Long id) {
-		return lessonRepo.findById(id).get();
+		return lessonRepo.findById(id).orElse(null);
 	}
 	
 	public Lesson createLesson(Teacher teacher, Room room, NewLessonRequest newLesson) {
@@ -26,8 +26,12 @@ public class LessonService {
 		Long date  = c.getTime().getTime();
 		long dur   = Long.parseLong(newLesson.getDuration());
 		int numStu = 0/*Integer.parseInt(newLesson.getNumStudents())*/;
-		Lesson l   = new Lesson(teacher, date, dur, room, numStu);
+		Lesson l   = new Lesson(teacher, date, dur, room, numStu, newLesson.getType());
 		lessonRepo.save(l);
 		return l;
+	}
+	
+	public Iterable<Lesson> all() {
+		return lessonRepo.findAll();
 	}
 }
