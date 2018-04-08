@@ -6,6 +6,9 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 
+import org.leagueofcole.musicFoundationProject.rooms.Room;
+import org.leagueofcole.musicFoundationProject.teacher.Teacher;
+
 @Entity
 public class Lesson {
 	@Id

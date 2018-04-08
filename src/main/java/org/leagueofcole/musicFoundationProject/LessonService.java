@@ -2,6 +2,8 @@ package org.leagueofcole.musicFoundationProject;
 
 import java.util.Calendar;
 
+import org.leagueofcole.musicFoundationProject.rooms.Room;
+import org.leagueofcole.musicFoundationProject.teacher.Teacher;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
