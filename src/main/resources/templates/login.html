@@ -5,15 +5,16 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/styles.css">
+    <!--<link rel="stylesheet" href="/styles.css">
     <link rel="stylesheet" href="/style2.css">
-    <script src="/script.js" defer></script>
+    <script src="/script.js" defer></script> -->
+   
   </head>
   <body>
-    <form name="f" method="POST" th:action = "@{/login}">
-      <input type="text" name="username">
-      <input type="password" name="password">
-      <input type="submit" value="Login">
+    <form name="f" method="post" th:action = "@{/login}">
+      <input type="text" name="username"/>
+      <input type="password" name="password"/>
+      <input type="submit" value="Login"/>
   	</form>
   </body>
 </html>
