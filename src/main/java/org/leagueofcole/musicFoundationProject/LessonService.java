@@ -28,6 +28,7 @@ public class LessonService {
 		Long date  = c.getTime().getTime();
 		long dur   = Long.parseLong(newLesson.getDuration());
 		int numStu = 0/*Integer.parseInt(newLesson.getNumStudents())*/;
+		System.out.println(date);
 		Lesson l   = new Lesson(teacher, date, dur, room, numStu, newLesson.getType());
 		lessonRepo.save(l);
 		return l;

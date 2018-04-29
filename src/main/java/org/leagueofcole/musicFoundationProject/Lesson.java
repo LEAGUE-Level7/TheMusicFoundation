@@ -1,5 +1,7 @@
 package org.leagueofcole.musicFoundationProject;
 
+import java.util.Date;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -46,9 +48,12 @@ public class Lesson {
 		return teacher;
 	}
 
-
 	public long getDate() {
 		return date;
+	}
+	
+	public String getStringDate() {
+		return new Date(date).toString();
 	}
 
 

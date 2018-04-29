@@ -29,6 +29,12 @@
     <h2>
         subtext
     </h2>
-    
+	<p th:text="|Id: ${lesson.id}|" />
+	<p th:text="|Teacher: ${lesson.teacher.userName}|" />
+	<p th:text="|Date: ${lesson.stringDate}|" />
+	<p th:text="|Duration: ${lesson.duration}|" />
+	<p th:text="|Room: ${lesson.room.name}|" />
+	<p th:text="|Students: ${lesson.numStudents}|" />
+	<p th:text="|Type: ${lesson.type}|" />
   </body>
 </html>
