@@ -16,17 +16,20 @@
 	  
 		  let resources = [];
 		  let events = [];
+		  console.log(data);
 		  data.forEach(function(lesson) {
 			if (!resources.some(function(room_) { return room_.id === lesson.room.id })) {
 				resources.push({ id: lesson.room.id, name: "Room " + lesson.room.name, eventColor: "red" });
 			} 
-		  });console.log(resources)
+		  });
+		  console.log(resources)
 		data.forEach(function(lesson, i) {
 			events.push({ id: lesson.id, resourceId: lesson.room.id, start: new Date(lesson.date), end: new Date(lesson.date + lesson.duration * 1000 * 60), title: "Lesson " + i })
 		  });
+		  console.log(events);
 	  
     $("#calendar").fullCalendar({
-      now: "2018-02-07",
+      now: new Date(),
       editable: true, // enable draggable events
       aspectRatio: 1.8,
       scrollTime: "00:00", // undo default 6am scrollTime
