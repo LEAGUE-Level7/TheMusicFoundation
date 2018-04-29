@@ -1,4 +1,4 @@
-package org.leagueofcole.musicFoundationProject;
+package org.leagueofcole.musicFoundationProject.rooms;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -9,13 +9,8 @@ public class RoomService {
 	RoomRepository roomRepo;
 	
 	public Room findByName(String name) {
-		Room room = null;
-		for (Room room_ : roomRepo.findAll()) {
-			if (room_.getName().equals(name)) {
-				room = room_;
-			}
-		}
-		return room;
+		
+		return roomRepo.findByName(name);
 	}
 	
 	public Iterable<Room> all() {

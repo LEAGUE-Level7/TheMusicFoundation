@@ -1,4 +1,4 @@
-package org.leagueofcole.musicFoundationProject;
+package org.leagueofcole.musicFoundationProject.teacher;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
