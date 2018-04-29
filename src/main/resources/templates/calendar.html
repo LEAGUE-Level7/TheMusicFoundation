@@ -12,8 +12,24 @@
 
   $(function() { // document ready
 
+	  $.getJSON("/lessons/all", function(data) {
+	  
+		  let resources = [];
+		  let events = [];
+		  console.log(data);
+		  data.forEach(function(lesson) {
+			if (!resources.some(function(room_) { return room_.id === lesson.room.id })) {
+				resources.push({ id: lesson.room.id, name: "Room " + lesson.room.name, eventColor: "red" });
+			} 
+		  });
+		  console.log(resources)
+		data.forEach(function(lesson, i) {
+			events.push({ id: lesson.id, resourceId: lesson.room.id, start: new Date(lesson.date), end: new Date(lesson.date + lesson.duration * 1000 * 60), title: "Lesson " + i })
+		  });
+		  console.log(events);
+	  
     $("#calendar").fullCalendar({
-      now: "2018-02-07",
+      now: new Date(),
       editable: true, // enable draggable events
       aspectRatio: 1.8,
       scrollTime: "00:00", // undo default 6am scrollTime
@@ -31,24 +47,10 @@
       },
       schedulerLicenseKey: "GPL-My-Project-Is-Open-Source",
       resourceLabelText: "Rooms",
-      resources: [
-        { id: "a", title: "Room A", eventColor: "red" },
-        { id: "b", title: "Room B", eventColor: "orange" },
-        { id: "c", title: "Room C", eventColor: "yellow" },
-        { id: "d", title: "Room D", eventColor: "green"},
-        { id: "e", title: "Room E", eventColor: "blue"},
-        { id: "f", title: "Room F", eventColor: "indigo" },
-        { id: "g", title: "Room G", eventColor: "violet"},
-     
-      ],
-      events: [
-        { id: "1", resourceId: "b", start: "2018-02-07T02:00:00", end: "2018-02-07T07:00:00", title: "event 1" },
-        { id: "2", resourceId: "c", start: "2018-02-07T05:00:00", end: "2018-02-07T22:00:00", title: "event 2" },
-        { id: "3", resourceId: "d", start: "2018-02-06", end: "2018-02-08", title: "event 3" },
-        { id: "4", resourceId: "e", start: "2018-02-07T03:00:00", end: "2018-02-07T08:00:00", title: "event 4" },
-        { id: "5", resourceId: "f", start: "2018-02-07T00:30:00", end: "2018-02-07T02:30:00", title: "event 5" }
-      ]
+      resources: resources,
+      events: events
     });
+	  });
   
   });
 
@@ -70,9 +72,7 @@
 </style>
 </head>
 <body>
-
-  <div id="calendar"></div>
-
 </body>
   <a href="/"> home </a>
+  <div id="calendar"></div>
 </html>
