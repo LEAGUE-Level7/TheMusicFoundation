@@ -13,7 +13,7 @@ $(document).ready(function() {
   });
   $("#year").change(updateDaysInMonth);
   $("#month").change(updateDays);
-  $("#month").val(now.getMonth() + 1);
+  $("#month").val(now.getMonth());
   $("#day").html("");
   const month = $("#month").val() - 1;
   for (let i = 1; i <= daysInMonth[month]; i++) {
