@@ -1,4 +1,4 @@
-package org.leagueofcole.musicFoundationProject;
+package org.leagueofcole.musicFoundationProject.rooms;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

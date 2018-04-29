@@ -1,11 +1,13 @@
 package org.leagueofcole.musicFoundationProject;
 
+import org.leagueofcole.musicFoundationProject.rooms.RoomService;
+import org.leagueofcole.musicFoundationProject.teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class DefaultController {
@@ -18,6 +20,11 @@ public class DefaultController {
 	
 	@Autowired
 	TeacherService teacherService;
+	
+	@GetMapping(path = "/login")
+	public String login() {
+		return "login";
+	}
 	
 	@GetMapping(path = "/lessons")
 	public String calendar() {
@@ -32,7 +39,7 @@ public class DefaultController {
 		return "homepage";
 	}
 	@GetMapping(path = "/lessons/view/{id}")
-	public String view(@RequestParam Long id, Model model) {
+	public String view(@PathVariable Long id, Model model) {
 		model.addAttribute("lesson", lessonService.findById(id));
 		return "view";
 	}
