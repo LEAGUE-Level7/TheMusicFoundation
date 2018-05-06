@@ -2,9 +2,7 @@ package org.leagueofcole.musicFoundationProject;
 
 import javax.annotation.PostConstruct;
 
-import org.leagueofcole.musicFoundationProject.rooms.Room;
 import org.leagueofcole.musicFoundationProject.rooms.RoomRepository;
-import org.leagueofcole.musicFoundationProject.teacher.Teacher;
 import org.leagueofcole.musicFoundationProject.teacher.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
