@@ -1,5 +1,9 @@
 <html>
 <head>
+  <title>Calendar View</title>
+     <meta name = "author" content = "The League of Amazing Programmers">
+    <meta name = "description" content = "The Foundation Music Center: San Diego's Music Lesson Center">
+    <meta name = "robots" content = "noindex">
 <meta charset="utf-8" />
 <link href="https://fullcalendar.io/js/fullcalendar-scheduler-1.9.2/lib/fullcalendar.min.css" rel="stylesheet" />
 <link href="https://fullcalendar.io/js/fullcalendar-scheduler-1.9.2/lib/fullcalendar.print.min.css" rel="stylesheet" media="print" />
@@ -8,12 +12,29 @@
 <script src="https://fullcalendar.io/js/fullcalendar-scheduler-1.9.2/lib/jquery.min.js"></script>
 <script src="https://fullcalendar.io/js/fullcalendar-scheduler-1.9.2/lib/fullcalendar.min.js"></script>
 <script src="https://fullcalendar.io/js/fullcalendar-scheduler-1.9.2/scheduler.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <script>
 
   $(function() { // document ready
 
+	  $.getJSON("/lessons/all", function(data) {
+	  
+		  let resources = [];
+		  let events = [];
+		  console.log(data);
+		  data.forEach(function(lesson) {
+			if (!resources.some(function(room_) { return room_.id === lesson.room.id })) {
+				resources.push({ id: lesson.room.id, name: "Room " + lesson.room.name, eventColor: "red" });
+			} 
+		  });
+		  console.log(resources)
+		data.forEach(function(lesson, i) {
+			events.push({ id: lesson.id, resourceId: lesson.room.id, start: new Date(lesson.date), end: new Date(lesson.date + lesson.duration * 1000 * 60), title: "Lesson " + i })
+		  });
+		  console.log(events);
+	  
     $("#calendar").fullCalendar({
-      now: "2018-02-07",
+      now: new Date(),
       editable: true, // enable draggable events
       aspectRatio: 1.8,
       scrollTime: "00:00", // undo default 6am scrollTime
@@ -31,6 +52,7 @@
       },
       schedulerLicenseKey: "GPL-My-Project-Is-Open-Source",
       resourceLabelText: "Rooms",
+<<<<<<< HEAD
       resources: [
         { id: "a", title: "Room A", eventColor: "red" },
         { id: "b", title: "Room B", eventColor: "darkorange" },
@@ -48,7 +70,12 @@
         { id: "4", resourceId: "e", start: "2018-02-07T03:00:00", end: "2018-02-07T08:00:00", title: "event 4" },
         { id: "5", resourceId: "f", start: "2018-02-07T00:30:00", end: "2018-02-07T02:30:00", title: "event 5" }
       ]
+=======
+      resources: resources,
+      events: events
+>>>>>>> LeaguePelicans/master
     });
+	  });
   
   });
 
@@ -70,9 +97,7 @@
 </style>
 </head>
 <body>
-
-  <div id="calendar"></div>
-
 </body>
-  <a href="/"> home </a>
+   <a href = "/homepage.html" class="btn"><i class="fa fa-home"></i>  home</a>
+  <div id="calendar"></div>
 </html>

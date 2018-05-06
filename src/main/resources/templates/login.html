@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
   <head>
     <h1>The Foundation Music Center</h1>
     <meta charset="utf-8">
@@ -17,4 +18,54 @@
       <input type="submit" value="Login"/>
   	</form>
   </body>
+=======
+<head>
+<title>sign in</title>
+<meta name="author" content="The League of Amazing Programmers">
+<meta name="description"
+	content="The Foundation Music Center: San Diego's Music Lesson Center">
+<meta name="robots" content="noindex">
+<h1>The Foundation Music Center</h1>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/style2.css">
+<script src="/script.js" defer></script>
+</head>
+<body
+	style="background-image: url(https://i.ytimg.com/vi/QD0Wlsm_Sdk/maxresdefault.jpg)">
+	<div class="params">
+		<!--<form action = "homepage.html">-->
+		<form name="f" method="post" th:action="@{/login}">
+			<br> <br> <br> <br> <br> <br> <br>
+			<div class="labels">
+				<label for="uName">Username</label><br>
+			</div>
+			<div class="boxes">
+				<input type="text" name="uName" class="inputBoxes" autocorrect="off"><br>
+			</div>
+			<br> <br>
+			<div class="labels">
+				<label for="pWord">Password</label><br>
+			</div>
+			<div class="boxes">
+				<input type="password" name="pWord" class="inputBoxes"
+					autocorrect="off"><br>
+			</div>
+			<br> <br> <br> <br> <br> <br> <br>
+			<br>
+			<div class="boxes">
+				<!--<input type="submit" value="Login" class = "buttons">-->
+				<button href="/homepage.html" class="loginButton">
+					<span>Login </span>
+				</button>
+			</div>
+		</form>
+		<!-- check to see if valid-->
+	</div>
+	<br>
+
+</body>
+>>>>>>> LeaguePelicans/master
 </html>

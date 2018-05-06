@@ -10,12 +10,13 @@ public class NewLessonRequest {
 	private String ampm;
 	private String duration;
 	private String type;
+	private String room;
 	
 	public NewLessonRequest() {
 		
 	}
 	
-	public NewLessonRequest(String day, String month, String year, String hour, String minute, String ampm, String duration,	 String type) {
+	public NewLessonRequest(String day, String month, String year, String hour, String minute, String ampm, String duration, String type, String room) {
 		this.day = day;
 		this.month = month;
 		this.year = year;
@@ -24,6 +25,7 @@ public class NewLessonRequest {
 		this.ampm = ampm;
 		this.duration = duration;
 		this.type = type;
+		this.room = room;
 	}
 	public String getDay() {
 		return day;
@@ -72,6 +74,12 @@ public class NewLessonRequest {
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	public String getRoom() {
+		return room;
+	}
+	public void setRoom(String room) {
+		this.room = room;
 	}
 	
 }
