@@ -1,7 +1,6 @@
 package org.leagueofcole.musicFoundationProject;
 
 import org.leagueofcole.musicFoundationProject.rooms.RoomService;
-import org.leagueofcole.musicFoundationProject.teacher.Teacher;
 import org.leagueofcole.musicFoundationProject.teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,10 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
 
 @Controller
 public class DefaultController {
@@ -40,14 +35,14 @@ public class DefaultController {
 
 	@GetMapping(path = "/")
 	public String homepage() {
-		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-		try {
-			String json = ow.writeValueAsString(new Teacher("Emp palp", "rebel scum"));
-			System.out.println(json);
-		} catch (JsonProcessingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+//		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+//		try {
+//			String json = ow.writeValueAsString(new Teacher("Emp palp", "rebel scum"));
+//			System.out.println(json);
+//		} catch (JsonProcessingException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		return "homepage";
 	}
 
