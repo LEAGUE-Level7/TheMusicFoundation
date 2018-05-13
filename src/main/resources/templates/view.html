@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TMF</title>
+    <title>View Lessons</title>
+       <meta name = "author" content = "The League of Amazing Programmers">
+    <meta name = "description" content = "The Foundation Music Center: San Diego's Music Lesson Center">
+    <meta name = "robots" content = "noindex">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,22 +13,28 @@
     <link rel="stylesheet" href="/styles.css">
     <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
     <style>
       
     </style>  
   </head>
 
-  <body>    
-
+  <body>  
+    <a href = "/homepage.html" class="btn"><i class="fa fa-home"></i>  home</a>
+    
     <h1> View Lessons  
     </h1> 
-    <a href="/"> home </a>
+      
     <h2>
         subtext
     </h2>
-    
-
-   	<p th:text="Type: ${lesson.type}"/>
-
+	<p th:text="|Id: ${lesson.id}|" />
+	<p th:text="|Teacher: ${lesson.teacher.userName}|" />
+	<p th:text="|Date: ${lesson.stringDate}|" />
+	<p th:text="|Duration: ${lesson.duration}|" />
+	<p th:text="|Room: ${lesson.room.name}|" />
+	<p th:text="|Students: ${lesson.numStudents}|" />
+	<p th:text="|Type: ${lesson.type}|" />
   </body>
 </html>

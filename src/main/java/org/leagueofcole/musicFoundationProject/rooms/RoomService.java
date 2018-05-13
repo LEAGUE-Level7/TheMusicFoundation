@@ -12,4 +12,8 @@ public class RoomService {
 		
 		return roomRepo.findByName(name);
 	}
+	
+	public Iterable<Room> all() {
+		return roomRepo.findAll();
+	}
 }
