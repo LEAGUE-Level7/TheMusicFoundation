@@ -27,15 +27,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
     
 
-    
-    public void configureAuth(AuthenticationManagerBuilder auth) throws Exception{
-			auth.inMemoryAuthentication().
-				withUser("User")
-				.password("Password")
-				.roles("USER");
-	
-
-    }
+//    
+//    public void configureAuth(AuthenticationManagerBuilder auth) throws Exception{
+//			auth.inMemoryAuthentication().
+//				withUser("User")
+//				.password("Password")
+//				.roles("USER");
+//	
+//
+//    }
 
    
 }

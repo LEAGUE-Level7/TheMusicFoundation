@@ -48,7 +48,7 @@ public class DefaultController {
 
 	@GetMapping(path = "/lessons/view/{id}")
 	public String view(@PathVariable Long id, Model model) {
-		model.addAttribute("lesson", lessonService.findById(id));
+		model.addAttribute("lesson", lessonService.findByTeacherID(id));
 		return "view";
 	}
 
