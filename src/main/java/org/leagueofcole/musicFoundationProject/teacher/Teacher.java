@@ -24,6 +24,7 @@ public class Teacher {
 
 	}
 
+
 	public Long getId() {
 		return id;
 	}
@@ -43,9 +44,17 @@ public class Teacher {
 	public String getPassword() {
 		return password;
 	}
+	public String getConfirmPassword() {
+		return confirmPassword;
+	}
+	public String getRegistryCode() {
+		return registryCode;
+	}
 
 	public void setPassword(String password) {
 		this.password = password;
+		this.confirmPassword=confirmPassword;
+		this.registryCode=registryCode;
 	}
 
 	@Transient
