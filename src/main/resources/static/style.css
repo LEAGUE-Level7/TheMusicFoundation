@@ -14,6 +14,7 @@
   font-family: Futura,Verdana,sans-serif;
 }
 
+}
 h2{
   color: grey;
   text-align: center;
@@ -46,7 +47,7 @@ a:hover{
   font-size:20px;
 }
 .inputBoxes{
-  width: 300px;
+  width: 500px;
   font-size:24px;
   font-family:Verdana,sans-serif;
 }

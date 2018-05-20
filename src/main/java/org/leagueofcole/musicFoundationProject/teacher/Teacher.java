@@ -1,8 +1,11 @@
 package org.leagueofcole.musicFoundationProject.teacher;
 
-import java.util.Set;
-import javax.persistence.*;
-
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
 @Table(name = "user")
@@ -13,7 +16,7 @@ public class Teacher {
 	private String userName;
 	private String password;
 	private String passwordConfirm;
-	private Set<Role> roles;
+	//private Set<Role> roles;
 
 	public Teacher(String userName, String password) {
 		super();
@@ -45,16 +48,14 @@ public class Teacher {
 		return password;
 	}
 	public String getConfirmPassword() {
-		return confirmPassword;
+		return "";
 	}
 	public String getRegistryCode() {
-		return registryCode;
+		return "";
 	}
 
 	public void setPassword(String password) {
 		this.password = password;
-		this.confirmPassword=confirmPassword;
-		this.registryCode=registryCode;
 	}
 
 	@Transient
@@ -66,13 +67,13 @@ public class Teacher {
 		this.passwordConfirm = passwordConfirm;
 	}
 
-	@ManyToMany
-	@JoinTable(name = "user_rle", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-	public Set<Role> getRoles() {
-		return roles;
-	}
+	//@ManyToMany
+	//@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	//public Set<Role> getRoles() {
+		//return roles;
+	//}
 
-	public void setRoles(Set<Role> roles) {
-		this.roles = roles;
-	}
+	//public void setRoles(Set<Role> roles) {
+		//this.roles = roles;
+	//}
 }
