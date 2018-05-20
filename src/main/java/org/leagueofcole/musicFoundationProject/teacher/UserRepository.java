@@ -2,5 +2,5 @@ package org.leagueofcole.musicFoundationProject.teacher;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface RoleRepository extends JpaRepository<Role, Long>{
+public interface UserRepository extends JpaRepository<Teacher, Long> {
 }

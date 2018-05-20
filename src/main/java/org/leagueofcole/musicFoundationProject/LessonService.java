@@ -1,9 +1,11 @@
 package org.leagueofcole.musicFoundationProject;
 
 import java.util.Calendar;
+import java.util.List;
 
 import org.leagueofcole.musicFoundationProject.rooms.Room;
 import org.leagueofcole.musicFoundationProject.teacher.Teacher;
+import org.leagueofcole.musicFoundationProject.teacher.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,11 +13,14 @@ import org.springframework.stereotype.Service;
 public class LessonService {
 	@Autowired
 	LessonRepository lessonRepo;
-	
+	@Autowired
+	TeacherRepository teacherRepo;
 	public Lesson findById(Long id) {
 		return lessonRepo.findById(id).orElse(null);
 	}
-	
+	public List<Lesson> findByTeacherID(Long id){
+		return lessonRepo.findByTeacher(teacherRepo.findById(id).get());
+	}
 	public Lesson createLesson(Teacher teacher, Room room, NewLessonRequest newLesson) {
 		int year   = Integer.parseInt(newLesson.getYear());
 		int month  = Integer.parseInt(newLesson.getMonth());

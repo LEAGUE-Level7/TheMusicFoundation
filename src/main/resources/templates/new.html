@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <a href = "/homepage.html" class="btn"><i class="fa fa-home"></i>  home</a>
+    <a href = "/" class="btn"><i class="fa fa-home"></i>  home</a>
+
     <title>New Lesson</title>
        <meta name = "author" content = "The League of Amazing Programmers">
     <meta name = "description" content = "The Foundation Music Center: San Diego's Music Lesson Center">
@@ -21,11 +22,12 @@
   </head>
   <body>
     <div class="container">
+    <a href = "/" class="btn"><i class="fa fa-home"></i>  home</a>
       <br>
       <h1>Schedule lesson</h1>
       <br>
       <br>
-      <form method="POST" enctype="application/x-www-form-urlencoded" id="addLessonForm" action="/lessons/new" class="text-center">
+      <form method="GET" enctype="application/x-www-form-urlencoded" id="addLessonForm" action="/lessons/create" class="text-center">
         <div class="form-group row">
           <label class="col-sm-1 col-form-label" for="day">Day:</label>
           <div class="col-sm-2"> 
@@ -64,9 +66,9 @@
             </select>
           </div>
           
-          <label class="col-sm-1 col-form-label" for="minutes">Minutes:</label>
+          <label class="col-sm-1 col-form-label" for="minute">Minutes:</label>
           <div class="col-sm-1"> 
-            <select class="form-control" id="minutes" name="minutes">
+            <select class="form-control" id="minute" name="minute">
               <option value="15">15</option>
               
               <option value="30">30</option>

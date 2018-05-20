@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
+
+
 <head>
-<title>sign in</title>
+<title>Sign in</title>
 <meta name="author" content="The League of Amazing Programmers">
 <meta name="description"
 	content="The Foundation Music Center: San Diego's Music Lesson Center">
 <meta name="robots" content="noindex">
-<h1>The Foundation Music Center</h1>
+<div style = "text-align:center">
+<img src = "https://static.wixstatic.com/media/20f8b6_cf5f09e5b4fe41d8a4a77aa96900f8e1~mv2.png/v1/crop/x_38,y_144,w_922,h_282/fill/w_321,h_99,al_c,usm_0.66_1.00_0.01/20f8b6_cf5f09e5b4fe41d8a4a77aa96900f8e1~mv2.png">
 <meta charset="utf-8">
+</div>
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="/styles.css">
@@ -17,6 +21,7 @@
 <body
 	style="background-image: url(https://i.ytimg.com/vi/QD0Wlsm_Sdk/maxresdefault.jpg)">
 	<div class="params">
+	<div style = "text-align:center">
 		<!--<form action = "homepage.html">-->
 		<form name="f" method="post" th:action="@{/login}">
 			<br> <br> <br> <br> <br> <br> <br>
@@ -38,12 +43,13 @@
 			<br>
 			<div class="boxes">
 				<!--<input type="submit" value="Login" class = "buttons">-->
-				<input type="submit" class="loginButton" value="Login">
+				 <button href = "/homepage.html" class="loginButton"><span>Login </span></button>
 			</div>
 		</form>
 		<!-- check to see if valid-->
 	</div>
 	<br>
-
+</div>
 </body>
+
 </html>
