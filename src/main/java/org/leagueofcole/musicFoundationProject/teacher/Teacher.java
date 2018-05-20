@@ -13,6 +13,8 @@ public class Teacher {
 	private String userName;
 	private String password;
 	private String passwordConfirm;
+	@ManyToMany
+	@JoinTable(name = "user_rle", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles;
 
 	public Teacher(String userName, String password) {
@@ -57,8 +59,7 @@ public class Teacher {
 		this.passwordConfirm = passwordConfirm;
 	}
 
-	@ManyToMany
-	@JoinTable(name = "user_rle", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	
 	public Set<Role> getRoles() {
 		return roles;
 	}

@@ -2,7 +2,7 @@ package org.leagueofcole.musicFoundationProject.service;
 
 import org.leagueofcole.musicFoundationProject.teacher.Role;
 import org.leagueofcole.musicFoundationProject.teacher.Teacher;
-import org.leagueofcole.musicFoundationProject.teacher.UserRepository;
+import org.leagueofcole.musicFoundationProject.teacher.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -16,20 +16,20 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Service
-public class UserDetailsServiceImpl implements UserDetailsService{
+public class TeacherDetailsServiceImpl implements UserDetailsService{
     @Autowired
-    private UserRepository userRepository;
+    private TeacherRepository teacherRepository;
 
     @Override
     @Transactional(readOnly = true)
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        Teacher user = userRepository.findByUsername(username);
+        Teacher teacher = teacherRepository.findByUserName(username);
 
         Set<GrantedAuthority> grantedAuthorities = new HashSet<>();
-        for (Role role : user.getRoles()){
+        for (Role role : teacher.getRoles()){
             grantedAuthorities.add(new SimpleGrantedAuthority(role.getName()));
         }
 
-        return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(), grantedAuthorities);
+        return new org.springframework.security.core.userdetails.User(teacher.getUserName(), teacher.getPassword(), grantedAuthorities);
     }
 }

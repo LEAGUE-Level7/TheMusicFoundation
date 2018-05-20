@@ -22,10 +22,10 @@ public class DefaultController {
 	@Autowired
 	TeacherService teacherService;
 
-	@GetMapping(path = "/login")
-	public String login() {
-		return "login";
-	}
+//	@GetMapping(path = "/login")
+//	public String login() {
+//		return "login";
+//	}
 
 	@GetMapping(path = "/lessons")
 	public String calendar(Model model) {
