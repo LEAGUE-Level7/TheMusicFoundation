@@ -1,7 +1,6 @@
 package org.leagueofcole.musicFoundationProject;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.repository.CrudRepository;
 import org.leagueofcole.musicFoundationProject.teacher.Teacher;
