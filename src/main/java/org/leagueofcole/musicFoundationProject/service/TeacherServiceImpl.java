@@ -1,24 +1,17 @@
 package org.leagueofcole.musicFoundationProject.service;
 
-<<<<<<< HEAD:src/main/java/org/leagueofcole/musicFoundationProject/service/TeacherServiceImpl.java
-import org.leagueofcole.musicFoundationProject.teacher.RoleRepository;
 import org.leagueofcole.musicFoundationProject.teacher.Teacher;
 import org.leagueofcole.musicFoundationProject.teacher.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-=======
->>>>>>> LeaguePelicans/master:src/main/java/org/leagueofcole/musicFoundationProject/service/UserServiceImpl.java
 import org.springframework.stereotype.Service;
 
 @Service
-<<<<<<< HEAD:src/main/java/org/leagueofcole/musicFoundationProject/service/TeacherServiceImpl.java
 public class TeacherServiceImpl {
     @Autowired
     private TeacherRepository teacherRepository;
-=======
-public class UserServiceImpl /* implements UserService */ {
-	/*
->>>>>>> LeaguePelicans/master:src/main/java/org/leagueofcole/musicFoundationProject/service/UserServiceImpl.java
+
+    /*
     @Autowired
     private UserService userService;
     @Autowired
@@ -46,5 +39,4 @@ public class UserServiceImpl /* implements UserService */ {
 		return userService.findByUsername(username);
 	}
 	*/
->>>>>>> LeaguePelicans/master:src/main/java/org/leagueofcole/musicFoundationProject/service/UserServiceImpl.java
 }

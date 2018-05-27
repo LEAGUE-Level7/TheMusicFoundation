@@ -3,12 +3,23 @@ package org.leagueofcole.musicFoundationProject.service;
 import org.springframework.stereotype.Service;
 
 @Service
-<<<<<<< HEAD
+
 public class SecurityServiceImpl implements SecurityService{
+
+	@Override
+	public String findLoggedInUsername() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void autologin(String username, String password) {
+		// TODO Auto-generated method stub
+		
+	}
    // @Autowired
     //private AuthenticationManager authenticationManager;
-=======
-public class SecurityServiceImpl /*implements SecurityService */{
+
 	/*
     @Autowired
     private AuthenticationManager authenticationManager;

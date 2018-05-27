@@ -16,15 +16,11 @@ public class Teacher {
 	private String userName;
 	private String password;
 	private String passwordConfirm;
-<<<<<<< HEAD
-	@ManyToMany
-	@JoinTable(name = "user_rle", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-	private Set<Role> roles;
-=======
-	//private Set<Role> roles;
->>>>>>> LeaguePelicans/master
 
-	public Teacher(String userName, String password) {
+//	@ManyToMany
+//	@JoinTable(name = "user_rle", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+//	private Set<Role> roles;
+ Teacher(String userName, String password) {
 		super();
 		this.userName = userName;
 		this.password = password;
@@ -73,18 +69,18 @@ public class Teacher {
 		this.passwordConfirm = passwordConfirm;
 	}
 
-<<<<<<< HEAD
+
 	
-	public Set<Role> getRoles() {
-		return roles;
-	}
-=======
+//	public Set<Role> getRoles() {
+//		return roles;
+//	}
+
 	//@ManyToMany
 	//@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	//public Set<Role> getRoles() {
 		//return roles;
 	//}
->>>>>>> LeaguePelicans/master
+
 
 	//public void setRoles(Set<Role> roles) {
 		//this.roles = roles;
