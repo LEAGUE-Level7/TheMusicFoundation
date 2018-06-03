@@ -27,7 +27,7 @@ public class LessonService {
 		int day    = Integer.parseInt(newLesson.getDay());
 		int hour   = Integer.parseInt(newLesson.getHour());
 		int minute = Integer.parseInt(newLesson.getMinute());
-		hour      += (newLesson.getAmpm()).equals("PM") ? 12 : 0; 
+		hour += (newLesson.getAmpm()).equals("PM") ? 12 : 0; 
 		Calendar c = Calendar.getInstance();
 		c.set(year, month, day, hour, minute);
 		Long date  = c.getTime().getTime();

@@ -1,14 +1,20 @@
 package org.leagueofcole.musicFoundationProject.teacher;
 
+import java.util.Set;
+
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
 @Entity
-@Table(name = "user")
+@Table(name = "teacher")
 public class Teacher {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,19 +22,18 @@ public class Teacher {
 	private String userName;
 	private String password;
 	private String passwordConfirm;
+	@ElementCollection(targetClass=Role.class)
+	private Set<Role> roles;
 
-//	@ManyToMany
-//	@JoinTable(name = "user_rle", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-//	private Set<Role> roles;
- Teacher(String userName, String password) {
+	Teacher(String userName, String password) {
 		super();
 		this.userName = userName;
 		this.password = password;
 	}
+
 	Teacher() {
 
 	}
-
 
 	public Long getId() {
 		return id;
@@ -49,9 +54,11 @@ public class Teacher {
 	public String getPassword() {
 		return password;
 	}
+
 	public String getConfirmPassword() {
 		return "";
 	}
+
 	public String getRegistryCode() {
 		return "";
 	}
@@ -69,20 +76,14 @@ public class Teacher {
 		this.passwordConfirm = passwordConfirm;
 	}
 
+	@ManyToMany
+	@JoinTable(name = "teacher_role", joinColumns = @JoinColumn(name = "teacher_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	public Set<Role> getRoles() {
+		return roles;
+	}
 
-	
-//	public Set<Role> getRoles() {
-//		return roles;
-//	}
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
 
-	//@ManyToMany
-	//@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
-	//public Set<Role> getRoles() {
-		//return roles;
-	//}
-
-
-	//public void setRoles(Set<Role> roles) {
-		//this.roles = roles;
-	//}
 }

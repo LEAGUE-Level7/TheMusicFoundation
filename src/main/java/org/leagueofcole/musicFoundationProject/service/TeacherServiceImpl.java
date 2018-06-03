@@ -17,26 +17,20 @@ public class TeacherServiceImpl {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
-<<<<<<< HEAD:src/main/java/org/leagueofcole/musicFoundationProject/service/TeacherServiceImpl.java
     public void save(Teacher teacher) {
         teacher.setPassword(bCryptPasswordEncoder.encode(teacher.getPassword()));
         teacher.setRoles(new HashSet<>(roleRepository.findAll()));
         teacherRepository.save(teacher);
     }
-
+*/
     public Teacher findByUsername(String username) {
         return teacherRepository.findByUserName(username);
     }
-=======
-    @Override
+
     public void save(Teacher user) {
-        user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        userService.save(user);
+        //user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+       // userService.save(user);
     }
 
-	@Override
-	public Teacher findByUsername(String username) {
-		return userService.findByUsername(username);
-	}
-	*/
+	
 }

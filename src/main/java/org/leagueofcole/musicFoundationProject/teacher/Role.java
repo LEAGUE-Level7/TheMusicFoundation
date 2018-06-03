@@ -1,13 +1,21 @@
 package org.leagueofcole.musicFoundationProject.teacher;
 
+
 import javax.persistence.*;
+import java.util.Set;
 
 @Entity
 @Table(name = "role")
 public class Role {
     private Long id;
     private String name;
+    @ElementCollection(targetClass=Teacher.class)
+    private Set<Teacher> teachers;
 
+    Role(){
+    	
+    
+    }
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
@@ -24,5 +32,14 @@ public class Role {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @ManyToMany(mappedBy = "roles")
+    public Set<Teacher> getUsers() {
+        return teachers;
+    }
+
+    public void setUsers(Set<Teacher> teachers) {
+        this.teachers = teachers;
     }
 }
