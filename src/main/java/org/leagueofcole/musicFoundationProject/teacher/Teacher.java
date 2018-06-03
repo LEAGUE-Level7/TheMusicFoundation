@@ -2,7 +2,6 @@ package org.leagueofcole.musicFoundationProject.teacher;
 
 import java.util.Set;
 
-import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -13,6 +12,8 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
+
+import org.leagueofcole.musicFoundationProject.role.Role;
 
 @Entity
 @Table(name = "teacher")
