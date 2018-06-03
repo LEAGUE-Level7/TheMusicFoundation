@@ -13,6 +13,8 @@ import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
+import org.leagueofcole.musicFoundationProject.role.Role;
+
 @Entity
 @Table(name = "teacher")
 public class Teacher {

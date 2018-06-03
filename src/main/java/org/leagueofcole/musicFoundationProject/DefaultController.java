@@ -1,5 +1,7 @@
 package org.leagueofcole.musicFoundationProject;
 
+import org.leagueofcole.musicFoundationProject.lesson.Lesson;
+import org.leagueofcole.musicFoundationProject.lesson.LessonService;
 import org.leagueofcole.musicFoundationProject.rooms.RoomService;
 import org.leagueofcole.musicFoundationProject.teacher.TeacherService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -1,7 +1,10 @@
-package org.leagueofcole.musicFoundationProject.teacher;
+package org.leagueofcole.musicFoundationProject.role;
 
 
 import javax.persistence.*;
+
+import org.leagueofcole.musicFoundationProject.teacher.Teacher;
+
 import java.util.Set;
 
 @Entity

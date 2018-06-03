@@ -1,8 +1,9 @@
-package org.leagueofcole.musicFoundationProject;
+package org.leagueofcole.musicFoundationProject.lesson;
 
 import java.util.Calendar;
 import java.util.List;
 
+import org.leagueofcole.musicFoundationProject.NewLessonRequest;
 import org.leagueofcole.musicFoundationProject.rooms.Room;
 import org.leagueofcole.musicFoundationProject.teacher.Teacher;
 import org.leagueofcole.musicFoundationProject.teacher.TeacherRepository;

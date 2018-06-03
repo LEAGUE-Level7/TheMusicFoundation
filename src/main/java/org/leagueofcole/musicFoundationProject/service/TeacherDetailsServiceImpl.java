@@ -3,7 +3,7 @@ package org.leagueofcole.musicFoundationProject.service;
 import java.util.HashSet;
 import java.util.Set;
 
-import org.leagueofcole.musicFoundationProject.teacher.Role;
+import org.leagueofcole.musicFoundationProject.role.Role;
 import org.leagueofcole.musicFoundationProject.teacher.Teacher;
 import org.leagueofcole.musicFoundationProject.teacher.TeacherRepository;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -2,6 +2,7 @@ package org.leagueofcole.musicFoundationProject;
 
 import javax.annotation.PostConstruct;
 
+import org.leagueofcole.musicFoundationProject.lesson.LessonRepository;
 import org.leagueofcole.musicFoundationProject.rooms.Room;
 import org.leagueofcole.musicFoundationProject.rooms.RoomRepository;
 import org.leagueofcole.musicFoundationProject.teacher.Teacher;
