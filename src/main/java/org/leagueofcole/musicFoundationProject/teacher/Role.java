@@ -1,9 +1,7 @@
-package org.leagueofcole.musicFoundationProject.role;
+package org.leagueofcole.musicFoundationProject.teacher;
 
 
 import javax.persistence.*;
-
-import org.leagueofcole.musicFoundationProject.teacher.Teacher;
 
 import java.util.Set;
 
@@ -12,7 +10,8 @@ import java.util.Set;
 public class Role {
     private Long id;
     private String name;
-    @ElementCollection(targetClass=Teacher.class)
+   //@ElementCollection(targetClass=Teacher.class)
+    @ManyToMany(fetch=FetchType.EAGER, mappedBy = "roles")
     private Set<Teacher> teachers;
 
     Role(){
@@ -37,7 +36,7 @@ public class Role {
         this.name = name;
     }
 
-    @ManyToMany(mappedBy = "roles")
+    @ManyToMany(fetch=FetchType.EAGER, mappedBy = "roles")
     public Set<Teacher> getUsers() {
         return teachers;
     }

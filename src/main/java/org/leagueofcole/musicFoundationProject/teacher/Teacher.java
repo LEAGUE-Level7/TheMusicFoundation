@@ -4,6 +4,7 @@ import java.util.Set;
 
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -12,8 +13,6 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
-
-import org.leagueofcole.musicFoundationProject.role.Role;
 
 @Entity
 @Table(name = "teacher")
@@ -24,18 +23,18 @@ public class Teacher {
 	private String userName;
 	private String password;
 	private String passwordConfirm;
-	@ElementCollection(targetClass=Role.class)
-	private Set<Role> roles;
+@ManyToMany(fetch=FetchType.EAGER)
+private Set<Role> roles;
 
-	Teacher(String userName, String password) {
+	public Teacher(String userName, String password, String passwordConfirm) {
 		super();
 		this.userName = userName;
 		this.password = password;
+		this.passwordConfirm = passwordConfirm;
 	}
-
-	Teacher() {
-
-	}
+Teacher(){
+	
+}
 
 	public Long getId() {
 		return id;
@@ -78,7 +77,7 @@ public class Teacher {
 		this.passwordConfirm = passwordConfirm;
 	}
 
-	@ManyToMany
+	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name = "teacher_role", joinColumns = @JoinColumn(name = "teacher_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	public Set<Role> getRoles() {
 		return roles;
