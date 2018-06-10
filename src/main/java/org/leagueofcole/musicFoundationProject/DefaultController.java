@@ -65,4 +65,5 @@ public class DefaultController {
 		model.addAttribute("lesson", l);
 		return "view";
 	}
+	
 }
