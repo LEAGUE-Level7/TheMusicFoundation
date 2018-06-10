@@ -39,7 +39,7 @@ public class TeacherController {
 
         securityService.autologin(userForm.getUserName(), userForm.getPasswordConfirm());
 
-        return "redirect:/welcome";
+        return "redirect:/login";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
