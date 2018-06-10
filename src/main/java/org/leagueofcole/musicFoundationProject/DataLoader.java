@@ -40,6 +40,7 @@ public class DataLoader {
 		teacherService.save(new Teacher("Ian","12345", "12345"));
 		//lessonRepo.save(new Lesson(new Teacher("Ian","12345"), new Date(), new Time()));
 		Room a = new Room("A", "General");
+		roomRepo.save(new Room("B", "General"));
 		roomRepo.save(a);
 		roleRepository.save(new Role("ADMIN"));
 		roleRepository.save(new Role("TEACHER"));
