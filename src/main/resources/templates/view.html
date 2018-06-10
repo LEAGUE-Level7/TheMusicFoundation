@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>View Lessons</title>
-       <meta name = "author" content = "The League of Amazing Programmers">
-    <meta name = "description" content = "The Foundation Music Center: San Diego's Music Lesson Center">
-    <meta name = "robots" content = "noindex">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/static/styles.css">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<head>
+<title>View Lessons</title>
+<meta name="author" content="The League of Amazing Programmers">
+<meta name="description"
+	content="The Foundation Music Center: San Diego's Music Lesson Center">
+<meta name="robots" content="noindex">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="/style.css" type = "text/css">
+<!-- Latest compiled and minified JavaScript -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <style>
-      
-    </style>  
-  </head>
+<style>
+</style>
+</head>
 
-  <body>  
-    <a href = "/" class="btn"><i class="fa fa-home"></i>  home</a>
-    
-    <h1> View Lessons  
-    </h1> 
-      
-    <h2>
-        subtext
-    </h2>
+<body>
+	<a href="/" class="btn"><i class="fa fa-home"></i> home</a>
+
+	<h1>View Lessons</h1>
+
+	<h2>subtext</h2>
 	<div th:each="l : ${lesson}">
-	<p th:text="|Id: ${l.id}|" />
-	<p th:text="|Teacher: ${l.teacher.userName}|" />
-	<p th:text="|Date: ${l.stringDate}|" />
-	<p th:text="|Duration: ${l.duration}|" />
-	<p th:text="|Room: ${l.room.name}|" />
-	<p th:text="|Students: ${l.numStudents}|" />
-	<p th:text="|Type: ${l.type}|" />
+		<p th:text="|Id: ${l.id}|" />
+		<p th:text="|Teacher: ${l.teacher.userName}|" />
+		<p th:text="|Date: ${l.stringDate}|" />
+		<p th:text="|Duration: ${l.duration}|" />
+		<p th:text="|Room: ${l.room.name}|" />
+		<p th:text="|Students: ${l.numStudents}|" />
+		<p th:text="|Type: ${l.type}|" />
 	</div>
-  </body>
+</body>
 </html>
