@@ -34,7 +34,7 @@
 		  let events = [];
 		  console.log(data);
 		  data.forEach(function(lesson) {
-			resources.push({ id: lesson.room.id, resourceText: "Room " + lesson.room.name, eventColor: "red" });
+			resources.push({ id: lesson.room.id, title: "Room " + lesson.room.name, eventColor: "red" });
 		  });
 		  console.log(resources)
 		data.forEach(function(lesson, i) {
