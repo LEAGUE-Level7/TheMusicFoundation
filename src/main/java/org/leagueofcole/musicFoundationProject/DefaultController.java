@@ -66,4 +66,5 @@ public class DefaultController {
 		return "view";
 	}
 	
+		
 }
