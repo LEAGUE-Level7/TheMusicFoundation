@@ -21,13 +21,21 @@ public class TeacherService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    /**
+     * saves a new teacher to the teacher repository
+     * @param teacher
+     */
     public void save(Teacher teacher) {
         teacher.setPassword(bCryptPasswordEncoder.encode(teacher.getPassword()));
         teacher.setRoles(new HashSet<>(roleRepository.findAll()));
         teacherRepository.save(teacher);
     }
 
-	
+	/**
+	 * 
+	 * @param name
+	 * @return all teachers with username given by @param name
+	 */
 	public Teacher findByUserName(String name) {
 		Teacher teacher = null;
 		for (Teacher teacher_ : teacherRepo.findAll()) {

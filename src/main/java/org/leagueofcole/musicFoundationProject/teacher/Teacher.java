@@ -37,53 +37,86 @@ Teacher(){
 	
 }
 
+/**
+ * @return teacher id
+ */
 	public Long getId() {
 		return id;
 	}
 
+/**
+ * set new id for teacher
+ * @param id
+ */
 	public void setId(Long id) {
 		this.id = id;
 	}
 
+	/**
+	 * @return teacher's username
+	 */
 	public String getUserName() {
 		return userName;
 	}
 
+	/**
+	 * set new username for teacher
+	 * @param username
+	 */
 	public void getUserName(String username) {
 		this.userName = username;
 	}
 
+	/**
+	 * @return teacher's password
+	 */
 	public String getPassword() {
 		return password;
 	}
 
-	public String getConfirmPassword() {
-		return "";
+	/**
+	 * set new password for teacher
+	 * @param password
+	 */
+	public void setPassword(String password) {
+		this.password = password;
 	}
-
+	
+	
 	public String getRegistryCode() {
 		return "";
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
-
 	@Transient
+	/**
+	 * @return teacher's confirmed password
+	 */
 	public String getPasswordConfirm() {
 		return passwordConfirm;
 	}
 
+	/**
+	 * set new confirmed password for teacher
+	 * @param passwordConfirm
+	 */
 	public void setPasswordConfirm(String passwordConfirm) {
 		this.passwordConfirm = passwordConfirm;
 	}
 
+	
+	/**
+	 * @return a set of all the teacher roles
+	 */
 	@ManyToMany(fetch=FetchType.EAGER)
 	@JoinTable(name = "teacher_role", joinColumns = @JoinColumn(name = "teacher_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
 	public Set<Role> getRoles() {
 		return roles;
 	}
 
+	/**
+	 * set new set of roles for teachers
+	 * @param roles
+	 */
 	public void setRoles(Set<Role> roles) {
 		this.roles = roles;
 	}

@@ -16,6 +16,9 @@ public class TeacherValidator implements Validator {
         return Teacher.class.equals(aClass);
     }
 
+    /**
+     * requirements for teacher attributes when creating new teacher
+     */
     @Override
     public void validate(Object o, Errors errors) {
         Teacher teacher = (Teacher) o;

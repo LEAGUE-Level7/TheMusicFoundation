@@ -16,6 +16,11 @@ public class TeacherController {
 	// @Autowired
 	// private TeacherValidator teacherValidator;
 
+    /**
+     * 
+     * @param model
+     * @return directs user to the registration page
+     */
     @RequestMapping(value = "/registration", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new Teacher());
@@ -38,6 +43,13 @@ public class TeacherController {
 //        return "redirect:/login";
 //    }
 
+    /**
+     * 
+     * @param model
+     * @param error
+     * @param logout
+     * @return directs user to the login page if there are no errors with username and password
+     */
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(Model model, String error, String logout) {
         if (error != null)
