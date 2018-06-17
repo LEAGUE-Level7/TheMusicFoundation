@@ -19,6 +19,9 @@ public class TeacherDetailsServiceImpl implements UserDetailsService {
 	@Autowired
 	private TeacherRepository teacherRepository;
 
+	/**
+	 * @return user details and permissions
+	 */
 	@Override
 	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 		Teacher teacher = teacherRepository.findByUserName(userName);

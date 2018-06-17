@@ -22,6 +22,9 @@ public class SecurityService{
 
     private static final Logger logger = LoggerFactory.getLogger(SecurityService.class);
 
+    /**
+     * @return usernames of all logged in users
+     */
     public String findLoggedInUsername() {
         Object userDetails = SecurityContextHolder.getContext().getAuthentication().getDetails();
         if (userDetails instanceof UserDetails) {
@@ -31,6 +34,11 @@ public class SecurityService{
         return null;
     }
 
+    /**
+     * allows user to login and autologin once account registered
+     * @param username
+     * @param password
+     */
     public void autologin(String username, String password) {
         UserDetails userDetails = userDetailsService.loadUserByUsername(username);
         UsernamePasswordAuthenticationToken usernamePasswordAuthenticationToken = new UsernamePasswordAuthenticationToken(userDetails, password, userDetails.getAuthorities());

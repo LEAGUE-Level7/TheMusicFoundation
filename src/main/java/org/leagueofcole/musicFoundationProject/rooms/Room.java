@@ -12,18 +12,32 @@ public class Room {
 	private String name;
 	private String type;
 
+	/**
+	 * @return room id
+	 */
 	public Long getId() {
 		return id;
 	}
 
+	/**
+	 * @return name of room
+	 */
 	public String getName() {
 		return name;
 	}
 
+	/**
+	 * @return type of room
+	 */
 	public String getType() {
 		return type;
 	}
 
+	/**
+	 * creates new Room
+	 * @param name
+	 * @param type
+	 */
 	public Room(String name, String type) {
 		super();
 		this.name = name;
