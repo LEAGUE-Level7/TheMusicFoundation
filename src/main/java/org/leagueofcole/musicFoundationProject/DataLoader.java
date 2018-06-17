@@ -24,7 +24,9 @@ public class DataLoader {
 	
 	private RoleRepository roleRepository;
 	
-
+	/**
+	 * Initializes DataLoader automatically (thats what @Autowired does)
+	 */
 	@Autowired
 	public DataLoader(LessonRepository lessonRepo, RoomRepository roomRepo, TeacherRepository teacherRepo, TeacherService teacherService, RoleRepository roleRepository) {
 		super();
@@ -35,17 +37,27 @@ public class DataLoader {
 		this.roleRepository = roleRepository;
 	}
 
+	/**
+	 * Loads data -- is called every time the application starts
+	 */
 	@PostConstruct
 	private void loadData() {
+		/*
+		 * Creates a Teacher named Ian with password 12345 -- use this to log in
+		 */
 		teacherService.save(new Teacher("Ian","12345", "12345"));
-		//lessonRepo.save(new Lesson(new Teacher("Ian","12345"), new Date(), new Time()));
+		
+		/*
+		 * Creates two initial rooms
+		 */
 		Room a = new Room("A", "General");
 		roomRepo.save(new Room("B", "General"));
 		roomRepo.save(a);
+		
+		/*
+		 * Creates user roles -- ADMIN and TEACHER
+		 */
 		roleRepository.save(new Role("ADMIN"));
 		roleRepository.save(new Role("TEACHER"));
-		//		Teacher t = new Teacher("wow", "pwd");
-//		teacherRepo.save(t);
-		//lessonRepo.save(new Lesson(t, new Date(), new Time(new Date().getTime()), new Time(new Date().getTime() + (1000 * 60 * 30)), a, 1));
 	}
 }

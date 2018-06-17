@@ -11,6 +11,9 @@ import javax.persistence.OneToOne;
 import org.leagueofcole.musicFoundationProject.rooms.Room;
 import org.leagueofcole.musicFoundationProject.teacher.Teacher;
 
+/**
+ * Models a lesson
+ */
 @Entity
 public class Lesson {
 	@Id
