@@ -1,5 +1,3 @@
-
-
 .loginButton:hover span {
   padding-right: 25px;
 }
@@ -23,10 +21,6 @@ h2{
 
 p2{
   text-align:center;
-}
-params{
-  text-align:center;
-  margin-left: 500px;
 }
 a:link, a:active, a:visited{
   text-align:right;

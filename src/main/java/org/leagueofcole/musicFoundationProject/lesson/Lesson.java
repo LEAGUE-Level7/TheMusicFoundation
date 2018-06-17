@@ -71,6 +71,25 @@ public class Lesson {
 		return numStudents;
 	}
 
+	public void setDate(long date) {
+		this.date = date;
+	}
+
+	public void setDuration(long duration) {
+		this.duration = duration;
+	}
+
+	public void setRoom(Room room) {
+		this.room = room;
+	}
+
+	public void setNumStudents(int numStudents) {
+		this.numStudents = numStudents;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
 
 	Lesson(){
 		

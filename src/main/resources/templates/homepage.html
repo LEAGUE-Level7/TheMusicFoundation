@@ -1,37 +1,43 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <!-- next class: IMPLEMENT THE FAVICONS INTO THE JAVA CODE-->
- <link rel="icon" href="images/musicNote.png">
-    <title>Homepage</title>
-       <meta name = "author" content = "The League of Amazing Programmers">
-    <meta name = "description" content = "The Foundation Music Center: San Diego's Music Lesson Center">
-    <meta name = "robots" content = "noindex">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/styles.css">
-    <link rel="stylesheet" href="/style2.css">
-    <script src="/script.js" defer></script>
-  </head>
-   <body>
-    <div style="text-align: center">
-    <img src = "images/title.png">
-    </div>
-    <div style="text-align: right; text-color: blue; font-size: 25px">
-        <!--<a th:href="@{/logout}">Sign Out</a><br>-->
-        <a href="javascript: document.logoutForm.submit()" role="menuitem">Logout</a>
-            <form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
-                <input hidden type="submit" value="Sign Out"/>
-            </form>
-    </div>
-      <div class = "params">
-    </div>
-    <br>
-
-      <a href="/lessons/new">New Lesson</a><br><br><br>
-      <a href="/lessons">View Calendar</a><br><br><br>
-      <a href="/lessons/view">View Lessons</a>
-  </body>
+<head>
+<!-- next class: IMPLEMENT THE FAVICONS INTO THE JAVA CODE-->
+<link rel="icon" href="images/musicNote.png">
+<title>Homepage</title>
+<meta name="author" content="The League of Amazing Programmers">
+<meta name="description"
+	content="The Foundation Music Center: San Diego's Music Lesson Center">
+<meta name="robots" content="noindex">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="/style.css" type = "text/css">
+<script src="/script.js" defer></script>
+</head>
+<body>
+	<div style="text-align: center">
+		<img src="images/title.png">
+	</div>
+	<div style="text-align: right; text-color: blue; font-size: 25px">
+		<!--<a th:href="@{/logout}">Sign Out</a><br>-->
+		<a href="javascript: document.logoutForm.submit()" role="menuitem">Logout</a>
+		<form name="logoutForm" th:action="@{/logout}" method="post"
+			th:hidden="true">
+			<input hidden type="submit" value="Sign Out" />
+		</form>
+	</div>
+	<br>
+	<br>
+	<br>
+	<br>
+	<div style="text-align: center; font-size: 26px">
+		<a href = "/lessons/new" class="fa fa-pencil" aria-hidden="true"> New Lesson</a><br>
+		<br>
+		<br> <a href="/lessons" class = "fa fa-calendar" aria-hidden="true"> View Calendar</a><br>
+		<br>
+		<br> <a href="/lessons/view" class = "fa fa-folder" aria-hidden="true"> View Lessons</a><br>
+	</div>
+</body>
 </html>

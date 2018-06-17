@@ -34,8 +34,29 @@ public class LessonService {
 		Long date  = c.getTime().getTime();
 		long dur   = Long.parseLong(newLesson.getDuration());
 		int numStu = 0/*Integer.parseInt(newLesson.getNumStudents())*/;
-		System.out.println(date);
 		Lesson l   = new Lesson(teacher, date, dur, room, numStu, newLesson.getType());
+		lessonRepo.save(l);
+		return l;
+	}
+	
+	public Lesson editLesson(long lessonId, Room room, NewLessonRequest updatedLesson) {
+		Lesson l = findById(lessonId);
+		int year   = Integer.parseInt(updatedLesson.getYear());
+		int month  = Integer.parseInt(updatedLesson.getMonth());
+		int day    = Integer.parseInt(updatedLesson.getDay());
+		int hour   = Integer.parseInt(updatedLesson.getHour());
+		int minute = Integer.parseInt(updatedLesson.getMinute());
+		hour += (updatedLesson.getAmpm()).equals("PM") ? 12 : 0; 
+		Calendar c = Calendar.getInstance();
+		c.set(year, month, day, hour, minute);
+		Long date  = c.getTime().getTime();
+		long dur   = Long.parseLong(updatedLesson.getDuration());
+		int numStu = 0/*Integer.parseInt(newLesson.getNumStudents())*/;
+		l.setDate(date);
+		l.setDuration(dur);
+		l.setNumStudents(numStu);
+		l.setRoom(room);
+		l.setType(updatedLesson.getType());
 		lessonRepo.save(l);
 		return l;
 	}
