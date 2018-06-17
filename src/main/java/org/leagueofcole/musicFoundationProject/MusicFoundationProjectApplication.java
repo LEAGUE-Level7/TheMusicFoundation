@@ -6,7 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class MusicFoundationProjectApplication {
 
-	
+	/**
+	 * Random necessary spring code -- entry point for the app
+	 */
 	public static void main(String[] args) {
 		SpringApplication.run(MusicFoundationProjectApplication.class, args);
 	}

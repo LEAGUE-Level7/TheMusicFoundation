@@ -7,6 +7,9 @@ import org.leagueofcole.musicFoundationProject.teacher.Teacher;
 
 import java.util.Set;
 
+/**
+ * Object to represent a role -- is currently unused
+ */
 @Entity
 @Table(name = "role")
 public class Role {

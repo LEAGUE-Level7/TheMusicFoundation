@@ -1,5 +1,8 @@
 package org.leagueofcole.musicFoundationProject;
 
+/**
+ * Object that models a user's request to create a new lesson.
+ */
 public class NewLessonRequest {
 
 	private String day;
@@ -12,11 +15,27 @@ public class NewLessonRequest {
 	private String type;
 	private String room;
 	
-	public NewLessonRequest() {
-		
+	public 
+	NewLessonRequest
+	(
+	) 
+	{
 	}
 	
-	public NewLessonRequest(String day, String month, String year, String hour, String minute, String ampm, String duration, String type, String room) {
+	public 
+	NewLessonRequest
+	(
+			String day, 
+			String month,
+			String year, 
+			String hour, 
+			String minute, 
+			String ampm, 
+			String duration, 
+			String type, 
+			String room
+	) 
+	{
 		this.day = day;
 		this.month = month;
 		this.year = year;
@@ -27,6 +46,7 @@ public class NewLessonRequest {
 		this.type = type;
 		this.room = room;
 	}
+	
 	public String getDay() {
 		return day;
 	}
